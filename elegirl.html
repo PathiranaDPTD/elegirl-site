@@ -3,56 +3,217 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elegirl Jewelry</title>
+  <meta name="description" content="Handmade jewelry by Elegirl - Unique bracelets, rings, and accessories with island vibes">
+  <title>Elegirl Jewelry | Handmade Daisy-Inspired Jewelry</title>
   <style>
+    :root {
+      --primary: #fcddec;
+      --secondary: #fce4f4;
+      --text: #4b2e2e;
+      --accent: #e8a0bf;
+    }
+    
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #fffafc;
-      color: #4b2e2e;
+      color: var(--text);
+      line-height: 1.6;
     }
+    
     header {
-      background-color: #fcddec;
+      background-color: var(--primary);
       padding: 40px;
       text-align: center;
     }
+    
     header h1 {
       margin: 0;
       font-size: 2.5rem;
+      color: var(--text);
     }
+    
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    
     nav {
-      background-color: #fce4f4;
+      background-color: var(--secondary);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--accent);
+    }
+    
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: var(--accent);
+    }
+    
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    
+    .product {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    
+    .product img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    
+    .product-info {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .product-info h3 {
+      margin: 0 0 10px;
+    }
+    
+    .price {
+      font-weight: bold;
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .btn:hover {
+      background-color: #d48bab;
+    }
+    
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    
+    .about-text {
+      flex: 1;
+    }
+    
+    .about-image {
+      flex: 1;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+    
+    .form-group textarea {
+      height: 150px;
+    }
+    
+    footer {
+      background-color: var(--primary);
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+    }
+    
+    .social-links {
       display: flex;
       justify-content: center;
       gap: 20px;
-      padding: 15px 0;
+      margin: 20px 0;
     }
-    nav a {
-      color: #4b2e2e;
-      text-decoration: none;
-      font-weight: bold;
+    
+    .social-links a {
+      color: var(--text);
+      font-size: 1.5rem;
     }
-    .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    footer {
-      background-color: #fcddec;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+    
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+      }
+      
+      nav {
+        gap: 15px;
+        padding: 15px 0;
+      }
     }
   </style>
 </head>
@@ -71,20 +232,73 @@
   <section id="gallery" class="section">
     <h2>Our Collection</h2>
     <div class="gallery">
-      <img src="https://via.placeholder.com/300x300?text=Bracelet+1" alt="Bracelet 1">
-      <img src="https://via.placeholder.com/300x300?text=Bracelet+2" alt="Bracelet 2">
-      <img src="https://via.placeholder.com/300x300?text=Rings" alt="Rings">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Daisy Chain Bracelet">
+        <div class="product-info">
+          <h3>Daisy Chain Bracelet</h3>
+          <p class="price">$24.99</p>
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1611591437281-4608be122683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Floral Pearl Ring">
+        <div class="product-info">
+          <h3>Floral Pearl Ring</h3>
+          <p class="price">$19.99</p>
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sunset Bead Necklace">
+        <div class="product-info">
+          <h3>Sunset Bead Necklace</h3>
+          <p class="price">$29.99</p>
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="about" class="section">
     <h2>About Elegirl</h2>
-    <p>Elegirl is a small jewelry brand founded by two creative minds, bringing you unique handmade accessories inspired by daisy dreams and island vibes. We deliver island-wide and craft each piece with attention to detail and love.</p>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Elegirl is a small jewelry brand founded by two creative minds, bringing you unique handmade accessories inspired by daisy dreams and island vibes.</p>
+        <p>Each piece is crafted with attention to detail and love, using high-quality materials that are gentle on your skin and kind to the environment.</p>
+        <p>Our mission is to bring a touch of nature's beauty to your everyday style while supporting sustainable craftsmanship.</p>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Handcrafting jewelry">
+      </div>
+    </div>
   </section>
 
   <section id="contact" class="section">
     <h2>Contact Us</h2>
-    <p>📩 DM us on <a href="https://www.instagram.com/_elegirl6" target="_blank">Instagram</a></p>
+    <div class="contact-form">
+      <form>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+    <div class="social-links">
+      <a href="https://www.instagram.com/_elegirl6" target="_blank" aria-label="Instagram">📸</a>
+      <a href="mailto:info@elegirl.com" aria-label="Email">✉️</a>
+      <a href="https://wa.me/1234567890" aria-label="WhatsApp">💬</a>
+    </div>
     <p>📦 Island-wide delivery available</p>
   </section>
 
